@@ -3,3 +3,24 @@
 .logo-photo{width:56px;height:56px;object-fit:contain;border-radius:50%;background:white;padding:3px}.application{display:grid;gap:13px}.application input,.application select,.application textarea{padding:15px;border:1px solid var(--line);width:100%;border-radius:5px;background:var(--cream)}.application label{font-size:13px;font-weight:800}.application textarea{min-height:120px}.notice{font-size:13px;line-height:1.7;color:var(--muted)}
 .hero:before{background:linear-gradient(90deg,#0e2b1ff0,#0e2b1fa0),url('/image.png') center/cover}.page-hero{background:linear-gradient(90deg,#10291fee,#10291fb0),url('/image.png') center/cover}
 @media(max-width:760px){.hero:before{background:linear-gradient(90deg,#0e2b1feb,#0e2b1fab),url('/image.png') center/cover}}
+
+/* Responsive navigation and motion enhancements */
+.menu-button{width:42px;height:42px;align-items:center;justify-content:center;flex-direction:column;gap:6px}
+.menu-button span{display:block;background:currentColor;width:25px;height:2px;border-radius:2px;transition:transform .28s ease,opacity .2s ease}
+.menu-button.is-open span:first-child{transform:translateY(8px) rotate(45deg)}
+.menu-button.is-open span:nth-child(2){opacity:0}
+.menu-button.is-open span:last-child{transform:translateY(-8px) rotate(-45deg)}
+.link-arrow{display:inline-block;transition:transform .25s ease}
+a:hover .link-arrow{transform:translateX(4px)}
+.tile,.panel,.gallery img{transition:transform .35s ease,box-shadow .35s ease}
+.tile:hover,.panel:hover{transform:translateY(-5px);box-shadow:0 18px 40px #10281918}
+.gallery img:hover{transform:scale(1.018)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.legal-content{max-width:870px}.legal-content h2{font-size:clamp(26px,3vw,38px);margin:38px 0 16px}.legal-content p{color:var(--muted)}.legal-content a{text-decoration:underline}
+.legal-links{display:flex;gap:24px;flex-wrap:wrap}.legal-links a{text-decoration:underline;text-underline-offset:3px}
+body{animation:pageEnter .5s ease both}@keyframes pageEnter{from{opacity:.5}to{opacity:1}}
+/* Lawn-focused visual rather than wildlife stock */
+.hero:before{background:linear-gradient(90deg,#0e2b1ff0,#0e2b1fa0),url('/image.png') center/cover}
+@media(max-width:760px){.menu-button{display:flex}.nav.open{display:flex;animation:mobileMenu .25s ease both}@keyframes mobileMenu{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.hero:before{background:linear-gradient(90deg,#0e2b1fe9,#0e2b1f9c),url('/image.png') center/cover}.foot-bottom{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){body{animation:none}.reveal{opacity:1;transform:none;transition:none}.nav.open{animation:none}.menu-button span,.link-arrow{transition:none}}
